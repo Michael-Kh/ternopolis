@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @order.room.room_type if @order.room %>
+</p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @order.arrival %>
+</p>
+
+<p>
+  <strong>Leaving:</strong>
+  <%= @order.leaving %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

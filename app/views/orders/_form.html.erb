@@ -1,0 +1,33 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :room_id %><br>
+    <%= f.radio_button(:room_id, 1) %>
+    <%= f.label("Econom") %>
+    <%= f.radio_button(:room_id, 2) %>
+    <%= f.label("Midclas") %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival %><br>
+    <%= f.date_select :arrival %>
+  </div>
+  <div class="field">
+    <%= f.label :leaving %><br>
+    <%= f.date_select :leaving %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
